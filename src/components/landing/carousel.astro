@@ -29,23 +29,29 @@ const items = [
 ---
 
 <div class="carousel-container bg rounded mt-5 mb-5">
-  <div class="carousel-track space-x-4">
-    {items.concat(items).map((item, index) => (
-      <div class="carousel-item flex flex-row border-gradient p-8">
-        <img src={item.image} alt={item.title} class="h-[200px] w-[200px] rounded-full object-cover" />
-        <div class="flex flex-col justify-center text-center">
-            <h1 class="text-4xl text-[#ffca00]">{item.title}</h1>
+  <div class="carousel-track space-x-2 lg:space-x-4">
+    {
+      items.concat(items).map((item, index) => (
+        <div class="carousel-item flex flex-col lg:flex-row border-gradient p-4 lg:p-8">
+          <img
+            src={item.image}
+            alt={item.title}
+            class="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] rounded-full object-cover"
+          />
+          <div class="flex flex-col justify-center text-center">
+            <h1 class="text-xl xl:text-4xl text-[#ffca00]">{item.title}</h1>
             <p class="text-xl">{item.description}</p>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </div>
 
 <style>
   .border-gradient {
     position: relative;
-    border-radius: 150px;
+    border-radius: 50px;
   }
 
   .border-gradient::before {
@@ -63,7 +69,6 @@ const items = [
     mask-composite: exclude;
   }
 
-
   .carousel-container {
     width: 100%;
     overflow: hidden;
@@ -74,7 +79,7 @@ const items = [
   .carousel-track {
     display: flex;
     width: calc(200%);
-    animation: scroll 30s linear infinite; 
+    animation: scroll 30s linear infinite;
   }
 
   .carousel-item {
@@ -89,6 +94,15 @@ const items = [
     display: block;
   }
 
+  @media (max-width: 768px) {
+    .border-gradient {
+      border-radius: 50px;
+    }
+
+    .border-gradient::before {
+      padding: 3px;
+    }
+  }
 
   @keyframes scroll {
     0% {
