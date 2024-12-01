@@ -1,2 +1,1 @@
-# gcgr-original
-Guía Cuántica para Generar Riqueza
+# Guía Cuántica para Generar Riqueza

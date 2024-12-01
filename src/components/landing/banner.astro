@@ -1,0 +1,45 @@
+---
+import bg from 'assets/bg.png';
+import effect from 'assets/effect.png';
+import { Picture } from "astro:assets";
+---
+
+<main class="main_banner rounded relative w-full w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"></main>
+
+<style>
+  .main_banner {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 200vh;
+    background-image: url('/flyer.jpg')
+  }
+
+  @media (max-width: 1100px) {
+    .main_banner {
+      background-size: cover;
+      height: 100vh;
+    }
+  }
+
+  @media (max-width: 690px) {
+    .main_banner {
+      background-size: cover;
+      height: 100vh;
+    }
+  }
+
+  @media (max-width: 585px) {
+    .main_banner {
+      background-size: cover;
+      height: 60vh;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .main_banner {
+      background-size: cover;
+      height: 50vh;
+    }
+  }
+</style>

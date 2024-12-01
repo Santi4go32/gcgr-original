@@ -1,0 +1,252 @@
+---
+const sales = [
+  {
+    title: "PREPÁRATE\nPARA RIQUEZA",
+    description: "$77",
+    image: "/COFRE.png",
+  },
+  {
+    title: "LA LLAVE MAESTRA\nDE LA RIQUEZA",
+    description: "$397",
+    image: "/LLAVE.png",
+  },
+  {
+    title: "LA SANACIÓN\nDE LA RIQUEZA",
+    description: "$47",
+    image: "/SANACION.png",
+  },
+  {
+    title: "EL SECRETO DE LA\nRIQUEZA",
+    description: "$297",
+    image: "/SECRETO.png",
+  },
+  {
+    title: "BONO ESPECIAL",
+    description: "$67",
+    image: "/BONO.png",
+  },
+];
+---
+
+<main class="relative w-full w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] mb-5 max-h-[300vh] overflow-y">
+  <div class="relative">
+    <div class="absolute inset-0">
+      <div
+        class="h-screen bg-[url('/m1.png')] bg-cover bg-center">
+      </div>
+      <div
+        class="h h-[60vh] lg:h-[70vh] xl:h-screen bg-[url('/m2.png')] bg-cover bg-center">
+      </div>
+      <div
+        class="h h-[80vh] lg:h-[5vh] md:h-[50vh] xl:h-screen bg-[url('/m3.png')] bg-cover bg-center">
+      </div>
+    </div>
+    <!-- Contenido superpuesto -->
+    <div
+      class="relative z-10 flex flex-col items-center xl:justify-center hh md:h-[210vh] lg:h-[180vh] xl:h-[300vh] text-white overflow-y max-h-[300vh]">
+      <h1
+        class="fade-up font text-5xl lg:text-[110px] text-center font-bold mb-4 tracking-tight leading-relaxed">
+        LO QUE OBTENDRÁS
+      </h1>
+      {
+        sales.map((sale) => (
+          <div class="fade-up relative flex flex-col lg:flex-row items-center mt-5 lg:gap-4 p-2 lg:p-4 xl:p-10 rounded-[60px] border-gradient w-[300px] lg:w-[600px]">
+            <img
+              src={sale.image}
+              alt={sale.title}
+              class="w-[120px] h-[120px] lg:w-[200px] lg:h-[200px] rounded-full"
+            />
+            <div class="font flex text-2xl lg:text-4xl text-center xl:text-end font-bold flex-col w-full">
+              <h2 class="whitespace-pre-line">{sale.title}</h2>
+              <p class="font-price text-4xl lg:text-8xl text-[#ffca00]">
+                {sale.description}
+              </p>
+            </div>
+          </div>
+        ))
+      }
+      <h1
+        class="fade-up font text-5xl lg:text-[70px] tracking-tightest mt-[40px] text-center font-bold">
+        VALOR TOTAL DE LA GUÍA CUÁNTICA
+      </h1>
+      <h1 class="fade-up font-price text-8xl lg:text-[100px] font-bold text-[#ffca00]">$885</h1>
+      <div
+        class="fade-up text-5xl lg:text-[60px] font-bold border-gradient text-center mt-10 lg:mt-5">
+        <h1 class="font m-2 lg:m-10 w-[280px] lg:w-auto leading-none">
+          OFERTA ESPECIAL:
+          <br />
+          (PAGO ÚNICO)
+          <br />
+          <span class="font-price text-[#ffca00] text-[100px]">$107</span>
+        </h1>
+      </div>
+    </div>
+  </div>
+</main>
+
+<style>
+  .border-gradient {
+    position: relative;
+    border-radius: 60px;
+  }
+
+  .border-gradient::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    padding: 8px;
+    background: linear-gradient(45deg, #7b6300, #ffbb00);
+    -webkit-mask:
+      linear-gradient(white, white) content-box,
+      linear-gradient(white, white);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+  }
+
+  @media (min-width: 900px) and (max-width: 1023px) and (min-height: 800px) and (max-height: 1280px) {
+    .h {
+      height: 5vh;
+    }
+    .hh {
+      height: 205vh;
+    }
+  }
+
+  @media (min-width: 1024px) and (min-height: 600px) and (max-height: 700px) {
+    .font {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .border-gradient::before {
+      padding: 6px;
+    }
+
+    .font-price {
+        font-size: 3rem;
+    }
+
+    .p-2 {
+        padding: 10px;
+    }
+
+  }
+
+  @media (min-width: 1024px) and (max-height: 599px) {
+    .font {
+      font-size: 2.5rem;
+      text-align: center;
+    }
+
+    .border-gradient::before {
+      padding: 6px;
+    }
+
+    .font-price {
+        font-size: 3rem;
+    }
+
+    .p-2 {
+        padding: 10px;
+    }
+
+    .overflow-y {
+        overflow-y: auto;
+        height: 300vh;
+    }
+  }
+
+  @media (min-width: 530px) and (max-height: 940px) {
+    .h {
+      height: 100vh;
+    }
+
+    .hh {
+      height: 300vh;
+    }
+  }
+
+  @media (min-width: 401px) and (max-width: 529px) and (max-height: 940px) {
+    .h {
+      height: 70vh;
+    }
+
+    .hh {
+      height: 240vh;
+    }
+  }
+
+  @media (max-width: 400px) and (max-height: 680px) {
+    .font {
+      font-size: 1.5rem;
+    }
+
+    .border-gradient::before {
+      padding: 4px;
+    }
+
+    .h {
+      height: 90vh;
+    }
+
+    .hh {
+      height: 280vh;
+    }
+  }
+
+  @media (max-width: 400px) and (min-height: 690px) and (max-height: 845px) {
+    .h {
+      height: 80vh;
+    }
+
+    .hh {
+      height: 260vh;
+    }
+  }
+
+  @media (max-width: 370px) and (min-height: 690px) and (max-height: 740px) {
+    .h {
+      height: 60vh;
+    }
+
+    .hh {
+      height: 230vh;
+    }
+
+    .font {
+      font-size: 1.5rem;
+    }
+
+    .border-gradient::before {
+      padding: 6px;
+    }
+
+    .font-price {
+        font-size: 3rem;
+    }
+  }
+
+  @media (max-width: 370px) and (min-height: 741px) and (max-height: 890px) {
+    .h {
+      height: 50vh;
+    }
+
+    .hh {
+      height: 200vh;
+    }
+
+    .font {
+      font-size: 1.5rem;
+    }
+
+    .border-gradient::before {
+      padding: 6px;
+    }
+
+    .font-price {
+        font-size: 3rem;
+    }
+  }
+</style>

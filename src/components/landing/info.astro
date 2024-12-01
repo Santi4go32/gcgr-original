@@ -1,0 +1,84 @@
+---
+const items = [
+  {
+    title: "INFORMACIÓN RELEVANTE",
+    text: "Lorem ipsum dolor sit amet. Ut sequi provident et blanditiis sunt sit laborum porro sed velit consequatur aut ipsum sunt sit doloribus labore et beatae laborum? Vel accusantium provident aut quos quia aut omnis veritatis non maiores atque?.Lorem ipsum dolor sit amet. Ut sequi provident et blanditiis sunt sit laborum porro sed velit consequatur aut ipsum sunt sit doloribus labore et beatae laborum? Vel accusantium provident aut quos quia aut omnis veritatis non maiores atque?",
+    imageSrc: "/moneda.png",
+    imageFirst: false,
+  },
+  {
+    title: "INFORMACIÓN RELEVANTE",
+    text: "Lorem ipsum dolor sit amet. Ut sequi provident et blanditiis sunt sit laborum porro sed velit consequatur aut ipsum sunt sit doloribus labore et beatae laborum? Vel accusantium provident aut quos quia aut omnis veritatis non maiores atque?.Lorem ipsum dolor sit amet. Ut sequi provident et blanditiis sunt sit laborum porro sed velit consequatur aut ipsum sunt sit doloribus labore et beatae laborum? Vel accusantium provident aut quos quia aut omnis veritatis non maiores atque?",
+    imageSrc: "/llavesita.png",
+    imageFirst: true,
+  },
+  {
+    title: "INFORMACIÓN RELEVANTE",
+    text: "Lorem ipsum dolor sit amet. Ut sequi provident et blanditiis sunt sit laborum porro sed velit consequatur aut ipsum sunt sit doloribus labore et beatae laborum? Vel accusantium provident aut quos quia aut omnis veritatis non maiores atque?.Lorem ipsum dolor sit amet. Ut sequi provident et blanditiis sunt sit laborum porro sed velit consequatur aut ipsum sunt sit doloribus labore et beatae laborum? Vel accusantium provident aut quos quia aut omnis veritatis non maiores atque?",
+    imageSrc: "/moneda.png",
+    imageFirst: false,
+  }
+];
+---
+
+<div class="flex flex-col gap-5 w-full text-4xl mt-5 mb-5">
+    {items.map((item) => (
+        <div class="card rounded grid grid-cols-1 bg md:grid-cols-3 gap-16 w-full fade-up">
+          {item.imageFirst ? (
+            <>
+              <div class="flex justify-center img-container items-center md:col-span-1">
+                <img src={item.imageSrc} alt="imagen" class="img w-full" />
+              </div>
+              <div class="text-center lg:text-end px-2 md:col-span-2 flex flex-col justify-center">
+                <h1 class="title">{item.title}</h1>
+                <p>{item.text}</p>
+              </div>
+            </>
+          ) : (
+            <>
+              <div class="text-center lg:text-start px-2 md:col-span-2 flex flex-col justify-center">
+                <h1 class="title">{item.title}</h1>
+                <p>{item.text}</p>
+              </div>
+              <div class="flex justify-center img-container items-center md:col-span-1">
+                <img src={item.imageSrc} alt="imagen" class="img w-full" />
+              </div>
+            </>
+          )}
+        </div>
+      ))}
+</div>
+
+<style>
+  .card {
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  .img-container {
+    display: inline-block;
+    border-radius: 70px;
+    padding: 10px; 
+    background: linear-gradient(45deg, #f9b50a, #634601);
+  }
+
+  .img {
+    display: block;
+    border-radius: 60px;
+    box-shadow:
+      0 0 10px rgba(0, 0, 0, 0.2),
+      inset 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+
+  .title {
+    color: #ffbb0f;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+</style>

@@ -1,0 +1,14 @@
+---
+import { getLangFromUrl, useTranslation } from "i18n/utils";
+import { Picture } from "astro:assets";
+import { Astronav, MenuItems, MenuIcon } from "astro-navbar";
+import Logo2 from "assets/logo2.png";
+import Link from "./ui/link.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslation(lang);
+---
+
+<footer class="bg-footer text-white py-10 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen relative">
+  <h1 class="text-center text-2xl">Aviso legal - Política de privacidad - Términos y condiciones - Política de cookies - Gestionar cookies</h1>
+</footer>

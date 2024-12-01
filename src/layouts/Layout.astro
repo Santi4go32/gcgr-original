@@ -1,0 +1,129 @@
+---
+import { SEO } from "astro-seo";
+import Footer from "@components/footer.astro";
+import Container from "@components/container.astro";
+import "@fontsource-variable/inter/index.css";
+import "@fontsource-variable/bricolage-grotesque";
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const makeTitle = Astro.props.title
+  ? `${Astro.props.title} | GUÍA CUÁNTICA PARA GENERAR RIQUEZA`
+  : "GUÍA CUÁNTICA PARA GENERAR RIQUEZA";
+
+const googleMapsApiKey = import.meta.env.GOOGLE_MAPS_API_KEY;
+const { currentLocale } = Astro;
+---
+
+<!doctype html>
+<html lang={currentLocale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{makeTitle}</title>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      });
+
+      document
+        .querySelectorAll(".fade-up")
+        .forEach((el) => observer.observe(el));
+    </script>
+  </head>
+  <body>
+    <slot />
+    <Footer />
+
+    <style is:global>
+      .fade-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition:
+          opacity 0.6s ease-out,
+          transform 0.6s ease-out;
+      }
+      .fade-up.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* .bg {
+        background: radial-gradient(
+          circle at 50% 50%,
+          #231023,
+          #320022,
+          #240124,
+          #2f030a,
+          #080212
+        );
+        color: white;
+      }
+      .rounded {
+        border-radius: 60px;
+        border: 10px solid #0D0D0D;
+      } */
+      .bg-footer {
+        background: radial-gradient(
+          circle at 50% 50%,
+          #231023,
+          #320022,
+          #240124,
+          #2f030a,
+          #080212
+        );
+        color: white;
+      }
+      /* .rounded {
+        border-radius: 60px;
+        border: 10px solid #0D0D0D;
+      } */
+      body {
+        background: #ffffff
+      }
+      /* body {
+        overflow-x: hidden;
+        background: radial-gradient(
+          circle at 50% 50%,
+          #000000,
+          #1a1a1a,
+          #330033,
+          #231023,
+          #231023
+        );
+        position: relative;
+        min-height: 100vh;
+        color: white;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        background-image: radial-gradient(
+            2px 2px at 20% 20%,
+            #ffffff,
+            transparent
+          ),
+          radial-gradient(2px 2px at 80% 30%, #ffffff, transparent),
+          radial-gradient(2px 2px at 50% 70%, #ffffff, transparent),
+          radial-gradient(2px 2px at 90% 90%, #ffffff, transparent),
+          radial-gradient(2px 2px at 10% 80%, #ffffff, transparent),
+          radial-gradient(2px 2px at 70% 50%, #ffffff, transparent);
+        z-index: -1;
+      } */
+    </style>
+  </body>
+</html>
