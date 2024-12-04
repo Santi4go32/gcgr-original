@@ -1,7 +1,7 @@
 ---
 const items = [
   {
-    title: "PREPÁRATE\nPARA RIQUEZA",
+    title: "PREPÁRATE\nPARA LA RIQUEZA",
     description: "Lorem ipsum...",
     image: "/COFRE.png",
   },
@@ -11,17 +11,17 @@ const items = [
     image: "/LLAVE.png",
   },
   {
-    title: "LA SANACIÓN\nDE LA RIQUEZA",
-    description: "Lorem ipsum...",
-    image: "/SANACION.png",
-  },
-  {
     title: "EL SECRETO DE LA\nRIQUEZA",
     description: "Lorem ipsum...",
     image: "/SECRETO.png",
   },
   {
-    title: "BONO ESPECIAL",
+    title: "SANACIÓN\nPARA LA RIQUEZA",
+    description: "Lorem ipsum...",
+    image: "/SANACION.png",
+  },
+  {
+    title: "BONO\nAfirmaciones positivas para Generar Riqueza",
     description: "Lorem ipsum...",
     image: "/BONO.png",
   },
@@ -32,15 +32,17 @@ const items = [
   <div class="carousel-track space-x-2 lg:space-x-4">
     {
       items.concat(items).map((item, index) => (
-        <div class="carousel-item flex flex-col lg:flex-row border-gradient p-4 lg:p-8">
-          <img
-            src={item.image}
-            alt={item.title}
-            class="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] rounded-full object-cover"
-          />
-          <div class="flex flex-col justify-center text-center">
-            <h1 class="text-xl xl:text-4xl text-[#ffca00]">{item.title}</h1>
-            <p class="text-xl">{item.description}</p>
+        <div class="carousel-item border-gradient p-2">
+          <div class="content flex flex-col lg:flex-row">
+            <img
+              src={item.image}
+              alt={item.title}
+              class="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] rounded-full object-cover"
+            />
+            <div class="flex flex-col justify-center text-center">
+              <h1 class="text-xl xl:text-4xl text-[#ffca00] whitespace-pre-line">{item.title}</h1>
+              {/* <p class="text-xl">{item.description}</p> */}
+            </div>
           </div>
         </div>
       ))
@@ -52,6 +54,7 @@ const items = [
   .border-gradient {
     position: relative;
     border-radius: 50px;
+    overflow: hidden; /* Asegura que el contenido no salga del borde */
   }
 
   .border-gradient::before {
@@ -67,6 +70,16 @@ const items = [
       linear-gradient(white, white);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
+  }
+
+  .content {
+    position: relative;
+    background-color: #f5f3c5;
+    height: 100%;
+    width: 100%;
+    border-radius: inherit;
+    padding: 16px;
+    box-sizing: border-box;
   }
 
   .carousel-container {
