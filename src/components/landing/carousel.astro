@@ -40,7 +40,7 @@ const items = [
               class="h-[150px] w-[150px] xl:h-[200px] xl:w-[200px] rounded-full object-cover"
             />
             <div class="flex flex-col justify-center text-center">
-              <h1 class="text-xl xl:text-4xl text-[#ffca00] whitespace-pre-line">{item.title}</h1>
+              <h1 class="flex text-lg xl:text-4xl text-[#ffca00] lg:whitespace-pre-line">{item.title}</h1>
               {/* <p class="text-xl">{item.description}</p> */}
             </div>
           </div>
@@ -54,7 +54,7 @@ const items = [
   .border-gradient {
     position: relative;
     border-radius: 50px;
-    overflow: hidden; /* Asegura que el contenido no salga del borde */
+    overflow: hidden;
   }
 
   .border-gradient::before {
@@ -74,11 +74,10 @@ const items = [
 
   .content {
     position: relative;
-    background-color: #f5f3c5;
+    background-color: #f6edce;
     height: 100%;
     width: 100%;
     border-radius: inherit;
-    padding: 16px;
     box-sizing: border-box;
   }
 
@@ -109,7 +108,7 @@ const items = [
 
   @media (max-width: 768px) {
     .border-gradient {
-      border-radius: 50px;
+      border-radius: 40px;
     }
 
     .border-gradient::before {
