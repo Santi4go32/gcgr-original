@@ -46,12 +46,12 @@ const sales = [
     <div
       class="relative z-10 flex flex-col items-center justify-center text-white overflow-y-auto overflow-x-hidden p-10">
       <h1
-        class="text-5xl lg:text-[130px] text-center font-bold mb-4 tracking-tight leading-relaxed">
+        class="text-5xl lg:text-[130px] text-center font-bold mb-4 tracking-tight leading-relaxed fade-up">
         LO QUE OBTENDRÁS
       </h1>
       {
         sales.map((sale) => (
-          <div class="relative flex flex-col lg:flex-row items-center mt-5 gap-4 p-10 rounded-[60px] border-gradient w-full w-[300px] lg:w-[600px]">
+          <div class="relative flex flex-col lg:flex-row items-center mt-5 gap-4 p-10 rounded-[60px] border-gradient w-full w-[300px] lg:w-[600px] fade-up">
             <img
               src={sale.image}
               alt={sale.title}
@@ -67,10 +67,10 @@ const sales = [
         ))
       }
       <h1
-        class="text-4xl lg:text-[80px] leading-snug mt-[40px] text-center font-bold">
+        class="text-4xl lg:text-[80px] leading-snug mt-[40px] text-center font-bold fade-up">
         VALOR TOTAL DE LA GUÍA CUÁNTICA PARA GENERAR RIQUEZA
       </h1>
-      <div class="flex items-center justify-center mt-5">
+      <div class="flex items-center justify-center mt-5 fade-up">
         <h1 class="text-6xl lg:text-[100px] font-bold text-[#ffca00] line-through decoration-[#8a4f01]">
           $885
         </h1>
@@ -79,7 +79,7 @@ const sales = [
         </h1>
       </div>
       <div
-        class="bgd text-4xl lg:text-[70px] font-bold border-gradient text-center mt-5">
+        class="bgd text-4xl lg:text-[70px] font-bold border-gradient text-center mt-5 fade-up">
         <h1 class="m-10 leading-none">
           OFERTA ESPECIAL:
           <br />
@@ -88,7 +88,7 @@ const sales = [
           <span class="border-text text-[#ffca00] text-[100px]">$107 <span class="text-[70px]">USD</span></span>
         </h1>
       </div>
-      <button class="mt-[80px]">
+      <button class="mt-[80px] fade-up">
         <a
           href="https://pay.hotmart.com/J96611143M"
           target="_blank"
