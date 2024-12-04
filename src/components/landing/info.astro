@@ -34,32 +34,33 @@ const items = [
 ---
 
 <div class="flex flex-col gap-5 w-full text-4xl mt-5 mb-5">
-    {items.map((item) => (
-        <div class="card rounded grid grid-cols-1 bg md:grid-cols-3 gap-16 w-full fade-up">
-          {item.imageFirst ? (
-            <>
-              <div class="flex justify-center img-container items-center md:col-span-1">
-                <img src={item.imageSrc} alt="imagen" class="img w-full" />
-              </div>
-              <div class="text-center lg:text-end px-2 md:col-span-2 flex flex-col justify-center">
-                <h1 class="title">{item.title}</h1>
-                <p>{item.text}</p>
-              </div>
-            </>
-          ) : (
-            <>
-              <div class="text-center lg:text-start px-2 md:col-span-2 flex flex-col justify-center">
-                <h1 class="title">{item.title}</h1>
-                <p>{item.text}</p>
-              </div>
-              <div class="flex justify-center img-container items-center md:col-span-1">
-                <img src={item.imageSrc} alt="imagen" class="img w-full" />
-              </div>
-            </>
-          )}
-        </div>
-      ))}
+  {items.map((item) => (
+      <div class="card rounded grid grid-cols-1 bg md:grid-cols-3 gap-16 w-full fade-up">
+        {item.imageFirst ? (
+          <>
+            <div class="flex justify-center img-container items-center md:col-span-1 order-first md:order-none">
+              <img src={item.imageSrc} alt="imagen" class="img w-full h-full" />
+            </div>
+            <div class="text-center lg:text-end px-2 md:col-span-2 flex flex-col justify-center order-last md:order-none">
+              <h1 class="title">{item.title}</h1>
+              <p>{item.text}</p>
+            </div>
+          </>
+        ) : (
+          <>
+            <div class="text-center lg:text-start px-2 md:col-span-2 flex flex-col justify-center order-last md:order-none">
+              <h1 class="title">{item.title}</h1>
+              <p>{item.text}</p>
+            </div>
+            <div class="flex justify-center img-container items-center md:col-span-1 order-first md:order-none">
+              <img src={item.imageSrc} alt="imagen" class="img w-full h-full" />
+            </div>
+          </>
+        )}
+      </div>
+    ))}
 </div>
+
 
 <style>
   .card {

@@ -45,6 +45,22 @@ const { currentLocale } = Astro;
     <!-- <Footer /> -->
 
     <style is:global>
+      @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap");
+
+      @font-face {
+        font-family: "Neue Plak";
+        src: url("/fonts/NeuePlak-Regular.ttf");
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Neue Plak";
+        src: url("/fonts/NeuePlak-Bold.ttf");
+        font-weight: bold;
+        font-style: normal;
+      }
+
       .fade-up {
         opacity: 0;
         transform: translateY(30px);
@@ -87,7 +103,7 @@ const { currentLocale } = Astro;
         border: 10px solid #0D0D0D;
       } */
       body {
-        background: #ffffff
+        background: #ffffff;
       }
       /* body {
         overflow-x: hidden;

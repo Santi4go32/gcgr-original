@@ -5,17 +5,17 @@ import bg from 'assets/bg.png';
 ---
 
 
-<main class="main_banner rounded relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-full h-auto flex justify-center items-center">
-  <button class="absolute bottom-0 mb-10">
+<main class="main_banner relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-full h-auto flex justify-center items-center">
+  <button class="absolute bottom-2 mb-4 lg:mb-10">
     <a
       href="https://pay.hotmart.com/J96611143M"
       target="_blank"
-      class="p-4 text-2xl text-white lg:text-[40px] font-bold bg-gradient-to-b from-[#ffbb00] to-[#513a01] rounded-[25px] text-center"
+      class="ml-2 p-2 md:p-4 text-md text-white md:text-[40px] font-bold bg-gradient-to-b from-[#ffbb00] to-[#513a01] rounded-[25px] text-center"
       >COMPRAR AHORA</a
     >
   </button>
 </main>
-<div class="banner rounded relative w-full w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-auto flex justify-center items-center">
+<div class="banner relative w-full w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] h-auto flex justify-center items-center">
   <p class="text-center text-white text-2xl md:text-4xl fade-up">
     Activa la <span class="text-[#ffb700]">energía</span> de la abundancia en tu interior y manifiesta la vida que mereces
   </p>
@@ -71,7 +71,7 @@ import bg from 'assets/bg.png';
   @media (max-width: 1024px) and (min-height: 720px) {
     .main_banner {
       background-image: url('/bg1-mb.png');
-      background-size: cover;
+      background-size: content;
       height: 120vh;
     }
   }
@@ -88,8 +88,8 @@ import bg from 'assets/bg.png';
     .main_banner {
       background-image: url('/bg1-mb.png');
       background-size: contain;
-      height: 55vh;
-      background-repeat: repeat;
+      height: 70vh;
+      background-repeat: no-repeat;
     }
   }
 
@@ -98,7 +98,7 @@ import bg from 'assets/bg.png';
       background-image: url('/bg1-mb.png');
       background-size: cover;
       height: 75vh;
-      background-repeat: repeat;
+      background-repeat: no-repeat;
     }
   }
 
