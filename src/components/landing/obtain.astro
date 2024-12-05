@@ -70,13 +70,14 @@ const sales = [
         class="text-4xl lg:text-[80px] leading-snug mt-[40px] text-center font-bold fade-up">
         VALOR TOTAL DE LA GUÍA CUÁNTICA PARA GENERAR RIQUEZA
       </h1>
-      <div class="flex items-center justify-center mt-5 fade-up">
-        <h1 class="text-6xl lg:text-[100px] font-bold text-[#ffca00] line-through decoration-[#8a4f01]">
+      <div class="flex items-center justify-center mt-5 fade-up relative">
+        <h1 class="text-6xl lg:text-[100px] font-bold text-[#ffca00]">
           $885
         </h1>
         <h1 class="text-4xl lg:text-[70px] font-bold text-[#ffca00] ml-2">
           USD
         </h1>
+        <div class="x-line"></div>
       </div>
       <div
         class="bgd text-4xl lg:text-[70px] font-bold border-gradient text-center mt-5 fade-up">
@@ -109,6 +110,26 @@ const sales = [
       1px 1px 0 #fff;
   } */
 
+  .x-line::before,
+  .x-line::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 7px;
+    background-color: #8a4f01;
+    top: 50%;
+    left: 0;
+    transform-origin: center;
+  }
+
+  .x-line::before {
+    transform: rotate(10deg);
+  }
+
+  .x-line::after {
+    transform: rotate(-10deg);
+  }
+
   .no-line-through {
     text-decoration: none !important;
   }
@@ -140,6 +161,14 @@ const sales = [
   @media (max-width: 720px) {
     .border-gradient::before {
       padding: 4px;
+    }
+
+    .x-line::before {
+      height: 5px;
+    }
+
+    .x-line::after {
+      height: 5px;
     }
   }
 </style>
