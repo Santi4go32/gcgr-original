@@ -6,37 +6,37 @@
   <div id="carousel" class="carousel relative">
     <div id="item_1" class="hideLeft">
       <p class="w-full text-center text-2xl font-bold">Camilo Moreno</p>
-      <img src="src/assets/testimonios/1.jpg" />
+      <img src="testimonios/1.jpg" />
     </div>
 
     <div id="item_2" class="prevLeftSecond">
       <p class="w-full text-center text-2xl font-bold">Yuly Manrique</p>
-      <img src="src/assets/testimonios/2.jpeg" />
+      <img src="testimonios/2.jpeg" />
     </div>
 
     <div id="item_3" class="prev">
       <p class="w-full text-center text-2xl font-bold">Wilfer Hernández</p>
-      <img src="src/assets/testimonios/3.jpeg" />
+      <img src="testimonios/3.jpeg" />
     </div>
 
     <div id="item_4" class="selected">
       <p class="w-full text-center text-2xl font-bold">Wilmer Manrique</p>
-      <img src="src/assets/testimonios/4.jpeg" />
+      <img src="testimonios/4.jpeg" />
     </div>
 
     <div id="item_5" class="next">
       <p class="w-full text-center text-2xl font-bold">Hernán Ramírez</p>
-      <img src="src/assets/testimonios/5.jpeg" />
+      <img class="w-[500px] h-[120px]" src="testimonios/5.jpeg" />
     </div>
 
     <div id="item_6" class="nextRightSecond">
       <p class="w-full text-center text-2xl font-bold">Nelcy Hernández</p>
-      <img src="src/assets/testimonios/6.jpeg" />
+      <img class="w-[500px] h-[120px]" src="testimonios/6.jpeg" />
     </div>
 
     <div id="item_7" class="hideRight">
       <p class="w-full text-center text-2xl font-bold">Luis Erazo</p>
-      <img src="src/assets/testimonios/7.jpeg" />
+      <img src="testimonios/7.jpeg" />
     </div>
   </div>
 
@@ -369,7 +369,7 @@
         });
       },
       nextAll: function (el) {
-        let els = [];
+        let els: HTMLElement[] = [];
 
         if (el) {
           while ((el = el.nextElementSibling)) {
@@ -380,7 +380,7 @@
         return els;
       },
       prevAll: function (el) {
-        let els = [];
+        let els: HTMLElement[] = [];
 
         if (el) {
           while ((el = el.previousElementSibling)) {
